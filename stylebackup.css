@@ -1,0 +1,100 @@
+/*
+Theme Name: Surreily Theme
+Theme URI: N/A
+Description: Theme using Bootstrap
+Version: 1
+Author: Sean Reilly
+Author URI: N/A
+*/
+
+@import url('bootstrap/css/bootstrap.min.css');
+@import url('bootstrap/css/bootstrap-theme.min.css');
+
+/*
+*** Normal green
+
+   shade 0 = #628E2B (main)
+   shade 1 = #B6DC88
+   shade 2 = #87B451
+   shade 3 = #3F680D
+   shade 4 = #254300
+
+*** Deep green
+
+   shade 0 = #317A4F (main)
+   shade 1 = #7FB494
+   shade 2 = #52946D
+   shade 3 = #1B6338
+   shade 4 = #074420
+
+*** Gold
+
+   shade 0 = #9DA93A (main)
+   shade 1 = #F1FAA8
+   shade 2 = #C7D26B
+   shade 3 = #747F16
+   shade 4 = #4C5501
+*/
+
+.no-margin {
+	margin: 0;
+}
+
+.no-padding {
+	padding: 0;
+}
+
+.small-padding {
+	padding: 0.2em;
+}
+
+div.block {
+	position: relative;
+	cursor: pointer;
+}
+
+div.block > div {
+	position: absolute;
+	bottom: 0px;
+	left: 0px;
+	width: 100%;
+	background-color: #000000;
+	color: white;
+	opacity: 0.7;
+	filter:alpha(opacity=70);
+	border-radius: 0 0 0.5em 0.5em;
+}
+
+div.block:hover > div {
+	background-color: #074420;
+}
+
+div.block > div > p {
+	padding: 10px;
+	margin: 0px;
+}
+
+div.block > img {
+	margin: 0;
+	border-radius: 0.5em;
+}
+
+.panel-main {
+	border-color: #3f680d;
+}
+
+.panel-main > .panel-heading {
+	color: #254300;
+	background-color: #b6dc88;
+	border-color: #3f680d;
+}
+.panel-main > .panel-heading + .panel-collapse > .panel-body {
+	border-top-color: #3f680d;
+}
+.panel-main > .panel-heading .badge {
+	color: #254300;
+	background-color: #b6dc88;
+}
+.panel-main > .panel-footer + .panel-collapse > .panel-body {
+	border-bottom-color: #3f680d;
+}
