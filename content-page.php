@@ -1,6 +1,6 @@
 <?php
 /**
- * Post content.
+ * Post content without date.
  */
 ?>
 

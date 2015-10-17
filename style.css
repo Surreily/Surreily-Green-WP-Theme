@@ -130,91 +130,53 @@ div.footer-text a:active {
 
 /* --- Custom navbar --- */
 
-/* navbar */
+/* Navbar */
 .navbar-custom {
-    background-color: #333333;
     border: none;
-    border-color: #111111;
     margin-bottom: 0;
 }
-/* title */
+
+/* Brand */
 .navbar-custom .navbar-brand {
-    color: #81bd88;
-    text-shadow: 0px 2px #196523;
+    text-shadow: none;
 }
+
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus {
-    color: #ffffff;
-    text-shadow: 0px 2px #999999;
+    text-shadow: none;
 }
-/* link */
+
+/* Link */
 .navbar-custom .navbar-nav > li > a {
-    color: #81bd88;
-    text-shadow: 0px 1px #196523;
+    text-shadow: none;
 }
+
 .navbar-custom .navbar-nav > li > a:hover,
 .navbar-custom .navbar-nav > li > a:focus {
-    color: #ffffff;
-    text-shadow: 0px 1px #05450d;
-    background-color: #519b5a;
+    text-shadow: none;
 }
+
 .navbar-custom .navbar-nav > .active > a, 
 .navbar-custom .navbar-nav > .active > a:hover, 
 .navbar-custom .navbar-nav > .active > a:focus {
-    color: #ffffff;
-    text-shadow: 0px 1px #222222;
-    background-color: #555555;
+    text-shadow: none;
 }
+
 .navbar-custom .navbar-nav > .open > a, 
 .navbar-custom .navbar-nav > .open > a:hover, 
 .navbar-custom .navbar-nav > .open > a:focus {
-    color: #ffffff;
-    text-shadow: 0px 1px #05450d;
-    background-color: #519b5a;
-}
-/* caret */
-.navbar-custom .navbar-nav > .dropdown > a .caret {
-    border-top-color: #81bd88;
-    border-bottom-color: #81bd88;
-}
-.navbar-custom .navbar-nav > .dropdown > a:hover .caret,
-.navbar-custom .navbar-nav > .dropdown > a:focus .caret {
-    border-top-color: #ffffff;
-    border-bottom-color: #ffffff;
-}
-.navbar-custom .navbar-nav > .open > a .caret, 
-.navbar-custom .navbar-nav > .open > a:hover .caret, 
-.navbar-custom .navbar-nav > .open > a:focus .caret {
-    border-top-color: #ffffff;
-    border-bottom-color: #ffffff;
-}
-.navbar-custom .dropdown-menu > li > a {
-  color: #ffffff;
+    text-shadow: none;
 }
 
-/* mobile version */
-.navbar-custom .navbar-toggle {
-    border-color: #DDD;
-}
-.navbar-custom .navbar-toggle:hover,
-.navbar-custom .navbar-toggle:focus {
-    background-color: #DDD;
-}
-.navbar-custom .navbar-toggle .icon-bar {
-    background-color: #CCC;
-}
+/* Dropdown */
 
 .navbar-custom .navbar-nav .open .dropdown-menu {
-  background-color: #333333;
-  border: none;
+    border: none;
 }
-.navbar-custom .navbar-nav .open .dropdown-menu > li > a {
-  color: #ffffff;
-}
+
 .navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover,
 .navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus {
-    color: #333333;
-    background-color: #ffffff;
+    background-image: none;
 }
 
 /* --- Categories list --- */

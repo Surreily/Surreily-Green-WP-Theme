@@ -11,7 +11,7 @@
 		<script src = "<?php bloginfo('template_directory'); ?>/bootstrap/js/bootstrap.min.js"></script>
 	
 	</body>
-	
-	<sup></sup>
+
+	<?php wp_footer(); ?>
 	
 </html>

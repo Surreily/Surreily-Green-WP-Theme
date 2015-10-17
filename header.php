@@ -6,6 +6,7 @@
 		<title><?php bloginfo('name'); ?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link href="<?php bloginfo('stylesheet_url') ?>" rel="stylesheet" type="text/css" media="all" />
+		<?php wp_head(); ?>
 	</head>
 	
 	<body>
@@ -23,7 +24,7 @@
 					</button>
 					
 					<!-- Title -->
-					<a href="#" class="navbar-brand">
+					<a href="<?php echo home_url(); ?>" class="navbar-brand">
 						<?php bloginfo('name'); ?>
 					</a>
 					
