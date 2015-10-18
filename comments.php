@@ -25,54 +25,56 @@
 					?>
 
 					<li <?php comment_class(); ?> id="li-comment-<?php comment_ID() ?>">
-						<div class="panel panel-main panel-body depth-<?php echo $depth; ?>" id="comment-<?php comment_ID() ?>">
+						<div class="panel panel-main panel-comment depth-<?php echo $depth; ?>" id="comment-<?php comment_ID() ?>">
 							
 							<div class="accent accent-<?php echo $depth; ?>"></div>
 
-							<table class="comment-table">
-								<tr>
+							<div class="panel-body">
+								<table class="comment-table">
+									<tr>
 
-									<td>
-										<div class="comment-author vcard">
-											<?php echo get_avatar($comment, $size='48'); ?>
-										</div>
-									</td>
+										<td>
+											<div class="comment-author vcard">
+												<?php echo get_avatar($comment, $size='48'); ?>
+											</div>
+										</td>
 
-									<td class="comment-content">
+										<td class="comment-content">
 
-										<p><b><?php custom_get_comment_author_link(); ?> said:</b></p>
-										
-										<?php comment_text() ?>
-
-										<?php if ($comment->comment_approved == '0') : ?>
-											<p><i><?php _e("This comment has not been moderated yet."); ?></i></p>
-										<?php endif; ?>
-
-										<div class="comment-meta commentmetadata">
-											<p class="text-muted">
-												<span class="pull-left">
-													<?php printf(__('Posted on %1$s at %2$s'), get_comment_date(), get_comment_time()) ?>
-												</span>
-												
-												<span class="pull-right">
-													<?php edit_comment_link(__("Edit"), '[', ']') ?>
-													<?php comment_reply_link(array_merge($args, array('depth' => $depth, 
-																									  'max_depth' => $args['max_depth'], 
-																									  'reply_text' => 'Reply',
-																									  'before' => '[',
-																									  'after' => ']'))) ?>
-												</span>
-											</p>
-
-										</div>
-
-										<div class="reply">
+											<p><b><?php custom_get_comment_author_link(); ?> said:</b></p>
 											
-										</div>
+											<?php comment_text() ?>
 
-									</td>
-								</tr>
-							</table>
+											<?php if ($comment->comment_approved == '0') : ?>
+												<p><i><?php _e("This comment has not been moderated yet."); ?></i></p>
+											<?php endif; ?>
+
+											<div class="comment-meta commentmetadata">
+												<p class="text-muted">
+													<span class="pull-left">
+														<?php printf(__('Posted on %1$s at %2$s'), get_comment_date(), get_comment_time()) ?>
+													</span>
+													
+													<span class="pull-right">
+														<?php edit_comment_link(__("Edit"), '[', ']') ?>
+														<?php comment_reply_link(array_merge($args, array('depth' => $depth, 
+																										  'max_depth' => $args['max_depth'], 
+																										  'reply_text' => 'Reply',
+																										  'before' => '[',
+																										  'after' => ']'))) ?>
+													</span>
+												</p>
+
+											</div>
+
+											<div class="reply">
+												
+											</div>
+
+										</td>
+									</tr>
+								</table>
+							</div>
 						</div>
 					<?php
 				}

@@ -44,46 +44,41 @@ Author URI: N/A
 /* --- General settings --- */
 body {
   font-family: Tahoma, Verdana, Arial, sans-serif;
-  background-color: #679792;
 }
 
-a {
-  color: #196523;
-}
+
 
 a:hover, 
 a:active {
-  color: #196523;
   text-decoration: none;
 }
 
 div.main-page {
-  outline: 10px solid #99b961;
   padding-top: 20px;
-  background-color: #e8e8e8;
   padding-bottom: 20px;
-}
-
-div.footer-text {
-  padding-top: 25px;
-  padding-bottom: 10px;
-}
-
-div.footer-text p {
-  color: #333333;
-}
-
-div.footer-text a {
-  color: #043732;
-}
-
-div.footer-text a:hover,
-div.footer-text a:active {
-  color: #ffffff;
 }
 
 .content-text p:last-child {
   margin-bottom: 0;
+}
+
+/* --- Footer --- */
+.footer {
+  width: 100%;
+}
+
+.footer .footer-text {
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+
+.footer p {
+  margin-bottom: 0;
+}
+
+.footer .footer-text a:hover,
+.footer .footer-text a:active {
+  color: #ffffff;
 }
 
 /* --- No padding and margins --- */
@@ -169,7 +164,6 @@ div.footer-text a:active {
 }
 
 /* Dropdown */
-
 .navbar-custom .navbar-nav .open .dropdown-menu {
     border: none;
 }
@@ -206,7 +200,6 @@ li.cat-item > a:active {
 }
 
 /* --- Portfolio block --- */
-
 div.block > img {
 	border: 5px solid #e8e8e8;
 	border-radius: 1em;
@@ -245,130 +238,99 @@ div.block > div > p {
 	margin: 0px;
 }
 
-/* --- Custom panel colours --- */
+/* --- Content panels --- */
 
-.panel-body > h3,
-.panel-body > div > h3 {
-  margin-top: 0;
-  color: #76983b;
-  font-size: 1.5em;
-}
-
-.panel-body > p.text-muted,
-.panel-body > div > p.text-muted {
-  margin-top: 1em;
-  margin-bottom: 0;
-  font-size: 0.9em;
-}
-
-.panel-main {
+.panel-main.panel-content,
+.panel-main.panel-content .panel-heading,
+.panel-main.panel-content .panel-body,
+.panel-main.panel-content .panel-footer {
   border: none;
 }
 
-/* main */
-.panel-main {
-	border-color: #81bd88;
-}
-.panel-main > .panel-heading {
-  padding: 0;
-	color: #c7e19a;
-  background-color: #c7e19a;
-	border: none;
+/* Main margins and padding */
+.panel-main.panel-content .panel-heading {
+  padding-bottom: 0;
 }
 
-.panel-main > .panel-heading > p {
-  padding-left: 0.5em;
-  padding-top: 0.2em;
-  padding-bottom: 0.2em;
-  margin: 0;
+.panel-main.panel-content .panel-body p:last-child {
+  margin-bottom: 0;
+}
+
+.panel-main.panel-content .panel-footer {
+  padding-top: 0;
+}
+
+/* Text formatting */
+.panel-main.panel-content .panel-heading h3 {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 1.5em;
+}
+
+.panel-main.panel-content .panel-footer p.text-muted {
   font-size: 0.9em;
-  color: #365207;
 }
 
-.panel-main > .panel-heading + .panel-collapse > .panel-body {
-	border-top-color: #81bd88;
-}
-
-.panel-main > .panel-heading .badge {
-	color: #81bd88;
-	background-color: #81bd88;
-}
-
-.panel-light {
-  background-color: #ffffff;
+.panel-main.panel-content .panel-footer p {
+  overflow: auto;
+  margin-bottom: 0;
 }
 
 /* --- Comment style --- */
 
+/* Heading for comments and reply form */
 .comments-title,
 .comment-reply-title {
-  color: #333333;
-  font-size: 1.5em;
+  font-size: 1.3em;
 }
 
+/* Comments */
 .comment-list, .children {
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
-li.comment > div {
+.panel-comment {
   position: relative;
   padding-left: 1.5em;
+  border: none;
 }
 
-li.comment > div > div.accent {
+.panel-comment div.accent {
   position: absolute;
-  width: 5px;
   height: 100%;
   top: 0;
   left: 0;
   border-radius: 4px 0 0 4px;
 }
 
-li.comment > div.depth-2 {
+div.depth-2.panel-comment {
   margin-left: 1.5em;
 }
 
-li.comment > div.depth-3 {
+div.depth-3.panel-comment {
   margin-left: 3em;
 }
 
-.accent-1 {
-  background-color: #679792;
-}
-
-.accent-2 {
-  background-color: #81bd88;
-}
-
-.accent-3 {
-  background-color: #c7e19a;
-}
-
-table.comment-table,
-table.comment-table > tr,
-table.comment-table > tr > td {
+.panel-comment table.comment-table,
+.panel-comment table.comment-table > tr,
+.panel-comment table.comment-table > tr > td {
   border: none;
   padding: 0;
   margin: 0;
 }
 
-table.comment-table td:last-child {
+.panel-comment table.comment-table td:last-child {
   width: 100%;
 }
 
-td.comment-content {
+.panel-comment td.comment-content {
   padding-left: 1em;
 }
 
-.comment-name {
+.panel-comment .comment-name {
   font-size: 1.2em;
-}
-
-.text-muted {
-  width: 100%;
-  font-size: 0.9em;
 }
 
 textarea {

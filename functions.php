@@ -33,8 +33,6 @@
 	// Theme customization API
 	function custom_theme_customization($wp_customize) {
 
-		// 
-
 		// Settings (navbar)
 		$wp_customize->add_setting('navbar_background_color_setting', array(
 			'default' => '#333333',
@@ -91,9 +89,140 @@
 			'sanitize_callback' => 'sanitize_hex_color'
 		));
 
-		// Settings (content)
-		$wp_customize->add_setting('content_background_color_setting', array(
+		// Settings (posts and pages)
+		$wp_customize->add_setting('post_background_color_setting', array(
 			'default' => '#ffffff',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('post_title_color_setting', array(
+			'default' => '#333333',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('post_title_hover_color_setting', array(
+			'default' => '#666666',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('post_text_color_setting', array(
+			'default' => '#333333',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('post_link_color_setting', array(
+			'default' => '#666666',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('post_link_hover_color_setting', array(
+			'default' => '#999999',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('post_footer_color_setting', array(
+			'default' => '#888888',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		// Settings (comments)
+		$wp_customize->add_setting('comment_main_color_setting', array(
+			'default' => '#333333',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('comment_background_color_setting', array(
+			'default' => '#ffffff',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('comment_title_color_setting', array(
+			'default' => '#333333',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('comment_text_color_setting', array(
+			'default' => '#333333',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('comment_link_color_setting', array(
+			'default' => '#666666',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('comment_link_hover_color_setting', array(
+			'default' => '#999999',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('comment_footer_color_setting', array(
+			'default' => '#999999',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('comment_accent_width_setting', array(
+			'default' => '5'
+		));
+
+		$wp_customize->add_setting('comment_accent1_color_setting', array(
+			'default' => '#333333',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('comment_accent2_color_setting', array(
+			'default' => '#666666',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('comment_accent3_color_setting', array(
+			'default' => '#999999',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('comment_form_text_color_setting', array(
+			'default' => '#333333',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('comment_form_link_color_setting', array(
+			'default' => '#666666',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('comment_form_link_hover_color_setting', array(
+			'default' => '#999999',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		// Settings (footer)
+		$wp_customize->add_setting('footer_text_content_setting', array(
+			'default' => 'Enter something unique here!'
+		));
+
+		$wp_customize->add_setting('footer_background_color_setting', array(
+			'default' => '#cccccc',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('footer_text_color_setting', array(
+			'default' => '#333333',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('footer_link_color_setting', array(
+			'default' => '#666666',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('footer_link_hover_color_setting', array(
+			'default' => '#999999',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		// Settings (other)
+		$wp_customize->add_setting('other_background_color_setting', array(
+			'default' => '#eeeeee',
 			'sanitize_callback' => 'sanitize_hex_color'
 		));
 
@@ -197,32 +326,280 @@
 				'settings' => 'navbar_sub_link_background_hover_color_setting')
 		));
 
-		// Controls (content)
+		// Controls (posts and pages)
 		$wp_customize->add_control(new WP_Customize_Color_Control(
 			$wp_customize,
-			'content_background_color_control',
+			'post_background_color_control',
 			array (
 				'label' => __('Background', 'surreilytheme'),
-				'section' => 'content_section',
-				'settings' => 'content_background_color_setting')
+				'section' => 'posts_section',
+				'settings' => 'post_background_color_setting')
 		));
 
-		/*$wp_customize->add_control('navbar_brand_color', array(
-			'label' => __('')
-			'type' => 'textarea',
-			'section' => 'navbar_section'
-		));*/
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'post_title_color_control',
+			array (
+				'label' => __('Title text', 'surreilytheme'),
+				'section' => 'posts_section',
+				'settings' => 'post_title_color_setting')
+		));
 
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'post_title_hover_color_control',
+			array (
+				'label' => __('Title text (hover)', 'surreilytheme'),
+				'section' => 'posts_section',
+				'settings' => 'post_title_hover_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'post_text_color_control',
+			array (
+				'label' => __('Text', 'surreilytheme'),
+				'section' => 'posts_section',
+				'settings' => 'post_text_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'post_link_color_control',
+			array (
+				'label' => __('Links', 'surreilytheme'),
+				'section' => 'posts_section',
+				'settings' => 'post_link_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'post_link_hover_color_control',
+			array (
+				'label' => __('Links (hover)', 'surreilytheme'),
+				'section' => 'posts_section',
+				'settings' => 'post_link_hover_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'post_footer_color_control',
+			array (
+				'label' => __('Footer text', 'surreilytheme'),
+				'section' => 'posts_section',
+				'settings' => 'post_footer_color_setting')
+		));
+
+		// Controls (comments)
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'comment_main_color_control',
+			array (
+				'label' => __('Main headings', 'surreilytheme'),
+				'section' => 'comments_section',
+				'settings' => 'comment_main_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'comment_background_color_control',
+			array (
+				'label' => __('Background', 'surreilytheme'),
+				'section' => 'comments_section',
+				'settings' => 'comment_background_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'comment_title_color_control',
+			array (
+				'label' => __('Title text', 'surreilytheme'),
+				'section' => 'comments_section',
+				'settings' => 'comment_title_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'comment_text_color_control',
+			array (
+				'label' => __('Text', 'surreilytheme'),
+				'section' => 'comments_section',
+				'settings' => 'comment_text_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'comment_link_color_control',
+			array (
+				'label' => __('Links', 'surreilytheme'),
+				'section' => 'comments_section',
+				'settings' => 'comment_link_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'comment_link_hover_color_control',
+			array (
+				'label' => __('Links (hover)', 'surreilytheme'),
+				'section' => 'comments_section',
+				'settings' => 'comment_link_hover_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'comment_footer_color_control',
+			array (
+				'label' => __('Footer text', 'surreilytheme'),
+				'section' => 'comments_section',
+				'settings' => 'comment_footer_color_setting')
+		));
+
+		$wp_customize->add_control('comment_accent_width_setting', array(
+			'label' => __('Accent width'),
+			'section' => 'comments_section',
+			'type' => 'range',
+			'input_attrs' => array(
+				'min' => 5,
+				'max' => 15,
+				'step' => 1
+		)));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'comment_accent1_color_control',
+			array (
+				'label' => __('Base level accent', 'surreilytheme'),
+				'section' => 'comments_section',
+				'settings' => 'comment_accent1_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'comment_accent2_color_control',
+			array (
+				'label' => __('Level 2 accent', 'surreilytheme'),
+				'section' => 'comments_section',
+				'settings' => 'comment_accent2_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'comment_accent3_color_control',
+			array (
+				'label' => __('Level 3 accent', 'surreilytheme'),
+				'section' => 'comments_section',
+				'settings' => 'comment_accent3_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'comment_form_text_color_control',
+			array (
+				'label' => __('Text', 'surreilytheme'),
+				'section' => 'comments_section',
+				'settings' => 'comment_form_text_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'comment_form_link_color_control',
+			array (
+				'label' => __('Links', 'surreilytheme'),
+				'section' => 'comments_section',
+				'settings' => 'comment_form_link_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'comment_form_link_hover_color_control',
+			array (
+				'label' => __('Links (hover)', 'surreilytheme'),
+				'section' => 'comments_section',
+				'settings' => 'comment_form_link_hover_color_setting')
+		));
+
+		// Controls (footer)
+		$wp_customize->add_control('footer_text_content_setting', array(
+			'label' => __('Text'),
+			'section' => 'footer_section',
+			'type' => 'textarea'
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'footer_background_color_control',
+			array (
+				'label' => __('Background', 'surreilytheme'),
+				'section' => 'footer_section',
+				'settings' => 'footer_background_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'footer_text_color_control',
+			array (
+				'label' => __('Text color', 'surreilytheme'),
+				'section' => 'footer_section',
+				'settings' => 'footer_text_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'footer_link_color_control',
+			array (
+				'label' => __('Links', 'surreilytheme'),
+				'section' => 'footer_section',
+				'settings' => 'footer_link_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'footer_link_hover_color_control',
+			array (
+				'label' => __('Links (hover)', 'surreilytheme'),
+				'section' => 'footer_section',
+				'settings' => 'footer_link_hover_color_setting')
+		));
+
+		// Controls (other)
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'other_background_color_control',
+			array (
+				'label' => __('Site background', 'surreilytheme'),
+				'section' => 'other_section',
+				'settings' => 'other_background_color_setting')
+		));
+
+		// Sections
 		$wp_customize->add_section('navbar_section', array(
 			'title' => __('Navbar settings'),
 			'description' => __('Make changes to the navigation bar (navbar) colors.'),
 			'priority' => 1000
 		));
 
-		$wp_customize->add_section('content_section', array(
-			'title' => __('Content settings'),
+		$wp_customize->add_section('posts_section', array(
+			'title' => __('Post/page settings'),
 			'description' => __('Change the look of your posts and pages.'),
 			'priority' => 1010
+		));
+
+		$wp_customize->add_section('comments_section', array(
+			'title' => __('Comment settings'),
+			'description' => __('Change the look of your comments.'),
+			'priority' => 1020
+		));
+
+		$wp_customize->add_section('footer_section', array(
+			'title' => __('Footer settings'),
+			'description' => __('Change the look of the footer.'),
+			'priority' => 1030
+		));
+
+		$wp_customize->add_section('other_section', array(
+			'title' => __('Other settings'),
+			'description' => __('Change any other settings here.'),
+			'priority' => 2000
 		));
 
 	}
@@ -234,7 +611,44 @@
 		?>
 			<style type="text/css">
 
-				/* --- Navbar --- /*
+				/* --- Panel --- */
+
+				.panel-main.panel-content .panel-heading,
+				.panel-main.panel-content .panel-body, 
+				.panel-main.panel-content .panel-footer {
+					background-color: <?php echo get_theme_mod('post_background_color_setting', '#ffffff'); ?>;
+				}
+
+				.panel-main.panel-content > .panel-heading a {
+					color: <?php echo get_theme_mod('post_title_color_setting', '#666666'); ?>;
+				}
+
+				.panel-main.panel-content > .panel-heading a:hover,
+				.panel-main.panel-content > .panel-heading a:focus {
+					color: <?php echo get_theme_mod('post_title_hover_color_setting', '#999999'); ?>;
+				}
+
+				.panel-main.panel-content > .panel-body {
+					color: <?php echo get_theme_mod('post_text_color_setting', '#333333'); ?>;
+				}
+
+				.panel-main.panel-content > .panel-body a,
+				.panel-main.panel-content > .panel-footer a {
+					color: <?php echo get_theme_mod('post_link_color_setting', '#666666'); ?>;
+				}
+
+				.panel-main.panel-content > .panel-body a:hover,
+				.panel-main.panel-content > .panel-body a:focus,
+				.panel-main.panel-content > .panel-footer a:hover,
+				.panel-main.panel-content > .panel-footer a:focus {
+					color: <?php echo get_theme_mod('post_link_hover_color_setting', '#999999'); ?>;
+				}
+
+				.panel-main.panel-content > .panel-footer > .text-muted {
+					color: <?php echo get_theme_mod('post_footer_color_setting', '#999999'); ?>;
+				}
+
+				/* --- Navbar --- */
 
 				/* Main */
 				.navbar-custom {
@@ -319,13 +733,98 @@
 				}
 
 				.navbar-custom .navbar-nav .open .dropdown-menu > li > a {
-				  	color: <?php echo get_theme_mod('navbar_sub_link_color_setting', '#ffffff'); ?>;
+					color: <?php echo get_theme_mod('navbar_sub_link_color_setting', '#ffffff'); ?>;
 				}
 
 				.navbar-custom .navbar-nav .open .dropdown-menu > li > a:hover,
 				.navbar-custom .navbar-nav .open .dropdown-menu > li > a:focus {
-				    color: <?php echo get_theme_mod('navbar_sub_link_hover_color_setting', '#cccccc'); ?>;
-				    background-color: <?php echo get_theme_mod('navbar_sub_link_background_hover_color_setting', '#666666'); ?>;
+				  color: <?php echo get_theme_mod('navbar_sub_link_hover_color_setting', '#cccccc'); ?>;
+				  background-color: <?php echo get_theme_mod('navbar_sub_link_background_hover_color_setting', '#666666'); ?>;
+				}
+
+				/* --- Comments --- */
+
+				/* Main */
+				.comments-title,
+				.comment-reply-title {
+				  color: <?php echo get_theme_mod('comment_main_color_setting', '#333333'); ?>;
+				}
+
+				.panel-comment {
+					color: <?php echo get_theme_mod('comment_text_color_setting', '#333333'); ?>;
+					background-color: <?php echo get_theme_mod('comment_background_color_setting', '#ffffff'); ?>;
+				}
+
+				/* Font styles */
+				.panel-comment b {
+					color: <?php echo get_theme_mod('comment_title_color_setting', '#333333'); ?>;
+				}
+
+				.panel-comment a {
+					color: <?php echo get_theme_mod('comment_link_color_setting', '#666666'); ?>;
+				}
+
+				.panel-comment a:hover,
+				.panel-comment a:focus {
+					color: <?php echo get_theme_mod('comment_link_hover_color_setting', '#999999'); ?>;
+				}
+
+				.panel-comment .text-muted {
+					color: <?php echo get_theme_mod('comment_footer_color_setting', '#666666'); ?>;
+				}
+
+				/* Accents */
+				.panel-comment .accent {
+					width: <?php echo get_theme_mod('comment_accent_width_setting', '5'); ?>px;
+				}
+
+				.panel-comment .accent-1 {
+					background-color: <?php echo get_theme_mod('comment_accent1_color_setting', '#333333'); ?>;
+				}
+
+				.panel-comment .accent-2 {
+					background-color: <?php echo get_theme_mod('comment_accent2_color_setting', '#666666'); ?>;
+				}
+
+				.panel-comment .accent-3 {
+					background-color: <?php echo get_theme_mod('comment_accent3_color_setting', '#999999'); ?>;
+				}
+
+				/* Form */
+				.comment-respond {
+					color: <?php echo get_theme_mod('comment_form_text_color_setting', '#333333'); ?>;
+				}
+
+				.comment-respond a {
+					color: <?php echo get_theme_mod('comment_form_link_color_setting', '#666666'); ?>;
+				}
+
+				.comment-respond a:hover,
+				.comment-respond a:focus {
+					color: <?php echo get_theme_mod('comment_form_link_hover_color_setting', '#999999'); ?>;
+				}
+
+				/* --- Footer --- */
+				.footer {
+					background-color: <?php echo get_theme_mod('footer_background_color_setting', '#cccccc'); ?>;
+				}
+
+				.footer p {
+					color: <?php echo get_theme_mod('footer_text_color_setting', '#333333'); ?>;
+				}
+
+				.footer a {
+					color: <?php echo get_theme_mod('footer_link_color_setting', '#666666'); ?>;
+				}
+
+				.footer a:hover,
+				.footer a:focus {
+					color: <?php echo get_theme_mod('footer_link_hover_color_setting', '#999999'); ?>;
+				}
+
+				/* --- Other --- */
+				body {
+					background-color: <?php echo get_theme_mod('other_background_color_setting', '#eeeeee'); ?>;
 				}
 
 			</style>
