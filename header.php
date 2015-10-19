@@ -48,6 +48,7 @@
 			</div>
 		</nav>
 		
-		<div class="container main-page">
+		<div class="max-width body">
+			<div class="container main-page">
 		
-			<!-- Beginning of main page -->
+				<!-- Beginning of main page -->

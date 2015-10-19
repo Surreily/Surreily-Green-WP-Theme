@@ -805,7 +805,7 @@
 				}
 
 				/* --- Footer --- */
-				.footer {
+				body {
 					background-color: <?php echo get_theme_mod('footer_background_color_setting', '#cccccc'); ?>;
 				}
 
@@ -823,7 +823,7 @@
 				}
 
 				/* --- Other --- */
-				body {
+				.body.max-width {
 					background-color: <?php echo get_theme_mod('other_background_color_setting', '#eeeeee'); ?>;
 				}
 

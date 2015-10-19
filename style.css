@@ -42,11 +42,10 @@ Author URI: N/A
 
 
 /* --- General settings --- */
+
 body {
   font-family: Tahoma, Verdana, Arial, sans-serif;
 }
-
-
 
 a:hover, 
 a:active {
@@ -62,10 +61,11 @@ div.main-page {
   margin-bottom: 0;
 }
 
-/* --- Footer --- */
-.footer {
+.max-width {
   width: 100%;
 }
+
+/* --- Footer --- */
 
 .footer .footer-text {
   padding-top: 20px;

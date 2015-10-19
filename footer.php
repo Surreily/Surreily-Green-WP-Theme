@@ -1,5 +1,5 @@
-			<!-- End of main page -->
-	
+				<!-- End of main page -->
+			</div>
 		</div>
 
 		<div class="footer">
