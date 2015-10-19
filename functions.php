@@ -404,7 +404,7 @@
 			$wp_customize,
 			'comment_background_color_control',
 			array (
-				'label' => __('Background', 'surreilytheme'),
+				'label' => __('Comment background', 'surreilytheme'),
 				'section' => 'comments_section',
 				'settings' => 'comment_background_color_setting')
 		));
@@ -413,7 +413,7 @@
 			$wp_customize,
 			'comment_title_color_control',
 			array (
-				'label' => __('Title text', 'surreilytheme'),
+				'label' => __('Comment title text', 'surreilytheme'),
 				'section' => 'comments_section',
 				'settings' => 'comment_title_color_setting')
 		));
@@ -422,7 +422,7 @@
 			$wp_customize,
 			'comment_text_color_control',
 			array (
-				'label' => __('Text', 'surreilytheme'),
+				'label' => __('Comment text', 'surreilytheme'),
 				'section' => 'comments_section',
 				'settings' => 'comment_text_color_setting')
 		));
@@ -431,7 +431,7 @@
 			$wp_customize,
 			'comment_link_color_control',
 			array (
-				'label' => __('Links', 'surreilytheme'),
+				'label' => __('Comment links', 'surreilytheme'),
 				'section' => 'comments_section',
 				'settings' => 'comment_link_color_setting')
 		));
@@ -440,7 +440,7 @@
 			$wp_customize,
 			'comment_link_hover_color_control',
 			array (
-				'label' => __('Links (hover)', 'surreilytheme'),
+				'label' => __('Comment links (hover)', 'surreilytheme'),
 				'section' => 'comments_section',
 				'settings' => 'comment_link_hover_color_setting')
 		));
@@ -449,13 +449,13 @@
 			$wp_customize,
 			'comment_footer_color_control',
 			array (
-				'label' => __('Footer text', 'surreilytheme'),
+				'label' => __('Comment footer text', 'surreilytheme'),
 				'section' => 'comments_section',
 				'settings' => 'comment_footer_color_setting')
 		));
 
 		$wp_customize->add_control('comment_accent_width_setting', array(
-			'label' => __('Accent width'),
+			'label' => __('Comment accent width'),
 			'section' => 'comments_section',
 			'type' => 'range',
 			'input_attrs' => array(
@@ -495,7 +495,7 @@
 			$wp_customize,
 			'comment_form_text_color_control',
 			array (
-				'label' => __('Text', 'surreilytheme'),
+				'label' => __('Reply form text', 'surreilytheme'),
 				'section' => 'comments_section',
 				'settings' => 'comment_form_text_color_setting')
 		));
@@ -504,7 +504,7 @@
 			$wp_customize,
 			'comment_form_link_color_control',
 			array (
-				'label' => __('Links', 'surreilytheme'),
+				'label' => __('Reply form links', 'surreilytheme'),
 				'section' => 'comments_section',
 				'settings' => 'comment_form_link_color_setting')
 		));
@@ -513,7 +513,7 @@
 			$wp_customize,
 			'comment_form_link_hover_color_control',
 			array (
-				'label' => __('Links (hover)', 'surreilytheme'),
+				'label' => __('Reply form links (hover)', 'surreilytheme'),
 				'section' => 'comments_section',
 				'settings' => 'comment_form_link_hover_color_setting')
 		));

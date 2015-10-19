@@ -65,6 +65,10 @@ div.main-page {
   width: 100%;
 }
 
+p.text-muted {
+  font-size: 0.9em;
+}
+
 /* --- Footer --- */
 
 .footer .footer-text {
@@ -74,11 +78,6 @@ div.main-page {
 
 .footer p {
   margin-bottom: 0;
-}
-
-.footer .footer-text a:hover,
-.footer .footer-text a:active {
-  color: #ffffff;
 }
 
 /* --- No padding and margins --- */
@@ -265,10 +264,6 @@ div.block > div > p {
   margin-top: 0;
   margin-bottom: 0;
   font-size: 1.5em;
-}
-
-.panel-main.panel-content .panel-footer p.text-muted {
-  font-size: 0.9em;
 }
 
 .panel-main.panel-content .panel-footer p {
