@@ -199,18 +199,70 @@ li.cat-item > a:active {
 }
 
 /* --- Portfolio block --- */
-div.block > img {
+div.portfolio {
+  padding: 4px;
+}
+div.block {
+  width: 100%;
+  padding-bottom: 75%;
+  position: relative;
+}
+
+div.block .stretch {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+/* Image block */
+
+div.block-image-title {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+div.block-image-title {
+  padding: 0.5em;
+  opacity: 0.7;
+  filter:alpha(opacity=70);
+}
+
+div.block-image-title p {
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+/* Text block */
+div.block-text {
+  padding: 10%;
+}
+
+div.block-text p {
+  text-align: center;
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5em;
+}
+
+/*div.block.block-image img {
 	border: 5px solid #e8e8e8;
 	border-radius: 1em;
 	cursor: pointer;
 }
 
-div.block:hover > img {
+div.block-image:hover img {
 	border: 5px solid #679792;
 	border-radius: 1em;
 }
 
-div.block > div {
+div.block-image div {
 	position: absolute;
 	bottom: 0px;
 	left: 0px;
@@ -225,17 +277,39 @@ div.block > div {
 	border-radius: 0 0 1em 1em;
 }
 
-div.block:hover > div {
+div.block:hover div {
 	background-color: #043732;
 	border-bottom: 5px solid #679792;
 	border-right: 5px solid #679792;
 	border-left: 5px solid #679792;
 }
 
-div.block > div > p {
+div.block-image div p {
 	padding: 10px;
 	margin: 0px;
 }
+
+div.block-text {
+  border-radius: 5px;
+  width: 100%;
+  padding-bottom: 75%;
+}
+div.block-text.block-text-1 {
+  background-color: #ff0000;
+}
+
+div.block-text.block-text-2 {
+  background-color: #dd2200;
+}
+
+div.block-text.block-text-3 {
+  background-color: #bb4400;
+}
+
+div.block-text p {
+  font-size: 1.3em;
+  color: #ffffff;
+}*/
 
 /* --- Content panels --- */
 

@@ -6,6 +6,12 @@
 		<title><?php bloginfo('name'); ?></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link href="<?php bloginfo('stylesheet_url') ?>" rel="stylesheet" type="text/css" media="all" />
+
+		<!-- Scripts -->
+		<script src = "<?php bloginfo('template_directory'); ?>/bootstrap/js/jquery-1.11.3.min.js"></script>
+		<script src = "<?php bloginfo('template_directory'); ?>/bootstrap/js/bootstrap.min.js"></script>
+		<script src = "<?php bloginfo('template_directory'); ?>/dotdotdot/jquery.dotdotdot.min.js"></script>
+
 		<?php wp_head(); ?>
 	</head>
 	

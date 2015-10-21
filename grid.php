@@ -37,38 +37,63 @@
 		while ($query->have_posts()) : $query->the_post();	
 	?>
 		
-	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-6 no-padding">
+	<div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 portfolio">
 					
-		<?php
-			// Get the image URL
-			if (has_post_thumbnail())
-			{
-		?>
-		
 		<a href="<?php the_permalink(); ?>">
 			<div class="block">
-				<?php the_post_thumbnail('block', array('class' => 'img-responsive', 'style' => 'width: 100%;')); ?>
-				<div class="block-div">
-					<p><?php the_title(); ?></p>
-				</div>
+				<?php
+					// If the post has a featured image, create an image block
+					if (has_post_thumbnail())
+					{
+				?>
+				
+						<?php the_post_thumbnail('block', array('class' => 'img-responsive stretch block-image', 'style' => 'width: 100%;')); ?>
+						<div class="block-image-title">
+							<p><?php the_title(); ?></p>
+						</div>
+				
+				<?php
+					}
+					// Otherwise, create a text block
+					else
+					{
+						// Choose a colour
+						$random_count = 1;
+						if(get_theme_mod('portfolio_text_random_background_setting', '1') != '1')
+						{
+							$random_count = 1 + fmod(strlen(get_the_title()), (int)get_theme_mod('portfolio_text_random_background_setting', '1'));
+						}
+				?>
+
+						<div class="stretch block-text block-text-<?php echo $random_count; ?>">
+							<p><?php the_title(); ?></p>
+						</div>
+
+				<?php
+					}
+				?>
 			</div>
 		</a>
-		
-		<?php
-			}
-			else
-			{
-		?>
-		
-		<?php
-			}
-		?>
 					
 	</div>
 		
 	<?php
 		endwhile;
 	?>
+
+	<script>
+		// Add dotdotdot to the divs
+		$(document).ready(function() {
+			$(".block-text").dotdotdot({
+				// Config
+			});
+		});
+
+		// Resize window listener
+		$(window).resize(function() {
+			$(".block-text").trigger("update");
+		})
+	</script>
 	
 </div>
 

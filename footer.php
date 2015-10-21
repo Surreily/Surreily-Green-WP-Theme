@@ -7,10 +7,6 @@
 				<p><?php echo get_theme_mod('footer_text_content_setting', 'Enter something unique here!'); ?> Powered by <a href="https://wordpress.org/">WordPress</a> and <a href="https://www.getbootstrap.com/">Bootstrap</a>.</p>
 			</div>
 		</div>
-		
-		<!-- Scripts -->
-		<script src = "<?php bloginfo('template_directory'); ?>/bootstrap/js/jquery-1.11.3.min.js"></script>
-		<script src = "<?php bloginfo('template_directory'); ?>/bootstrap/js/bootstrap.min.js"></script>
 	
 	</body>
 
