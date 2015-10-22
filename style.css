@@ -10,35 +10,6 @@ Author URI: N/A
 @import url('bootstrap/css/bootstrap.min.css');
 @import url('bootstrap/css/bootstrap-theme.min.css');
 
-/*
-// Paletton ID: b2R3f2p0kjIkDa6uyfgp5o0gottb8
-
-*** Primary
-
-   shade 0 = #31803b
-   shade 1 = #81bd88
-   shade 2 = #519b5a
-   shade 3 = #196523
-   shade 4 = #05450d
-
-*** Secondary a
-
-   shade 0 = #27665f
-   shade 1 = #679792
-   shade 2 = #417c76
-   shade 3 = #14514b
-   shade 4 = #043732
-
-*** Secondary b
-
-   shade 0 = #76983b
-   shade 1 = #c7e19a
-   shade 2 = #99b961
-   shade 3 = #57791e
-   shade 4 = #365207
-
-*/
-
 
 
 /* --- General settings --- */
@@ -69,6 +40,8 @@ p.text-muted {
   font-size: 0.9em;
 }
 
+
+
 /* --- Footer --- */
 
 .footer .footer-text {
@@ -79,6 +52,8 @@ p.text-muted {
 .footer p {
   margin-bottom: 0;
 }
+
+
 
 /* --- No padding and margins --- */
 
@@ -121,6 +96,8 @@ p.text-muted {
   padding-top: 0.3em;
   padding-bottom: 0.3em;
 }
+
+
 
 /* --- Custom navbar --- */
 
@@ -172,6 +149,8 @@ p.text-muted {
     background-image: none;
 }
 
+
+
 /* --- Categories list --- */
 
 ul.categories {
@@ -198,6 +177,8 @@ li.cat-item > a:active {
   background-color: #196523;
 }
 
+
+
 /* --- Portfolio block --- */
 div.portfolio {
   padding: 4px;
@@ -217,7 +198,6 @@ div.block .stretch {
 }
 
 /* Image block */
-
 div.block-image-title {
   position: absolute;
   bottom: 0;
@@ -251,65 +231,7 @@ div.block-text p {
   font-size: 1.5em;
 }
 
-/*div.block.block-image img {
-	border: 5px solid #e8e8e8;
-	border-radius: 1em;
-	cursor: pointer;
-}
 
-div.block-image:hover img {
-	border: 5px solid #679792;
-	border-radius: 1em;
-}
-
-div.block-image div {
-	position: absolute;
-	bottom: 0px;
-	left: 0px;
-	width: 100%;
-	background-color: #000000;
-	color: white;
-	opacity: 0.7;
-	filter:alpha(opacity=70);
-	border-bottom: 5px solid #e8e8e8;
-	border-right: 5px solid #e8e8e8;
-	border-left: 5px solid #e8e8e8;
-	border-radius: 0 0 1em 1em;
-}
-
-div.block:hover div {
-	background-color: #043732;
-	border-bottom: 5px solid #679792;
-	border-right: 5px solid #679792;
-	border-left: 5px solid #679792;
-}
-
-div.block-image div p {
-	padding: 10px;
-	margin: 0px;
-}
-
-div.block-text {
-  border-radius: 5px;
-  width: 100%;
-  padding-bottom: 75%;
-}
-div.block-text.block-text-1 {
-  background-color: #ff0000;
-}
-
-div.block-text.block-text-2 {
-  background-color: #dd2200;
-}
-
-div.block-text.block-text-3 {
-  background-color: #bb4400;
-}
-
-div.block-text p {
-  font-size: 1.3em;
-  color: #ffffff;
-}*/
 
 /* --- Content panels --- */
 
@@ -344,6 +266,8 @@ div.block-text p {
   overflow: auto;
   margin-bottom: 0;
 }
+
+
 
 /* --- Comment style --- */
 

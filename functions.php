@@ -92,6 +92,10 @@
 
 
 		// Settings (posts and pages)
+		$wp_customize->add_setting('post_border_radius_setting', array(
+			'default' => '4'
+		));
+
 		$wp_customize->add_setting('post_background_color_setting', array(
 			'default' => '#ffffff',
 			'sanitize_callback' => 'sanitize_hex_color'
@@ -418,6 +422,16 @@
 
 
 		// Controls (posts and pages)
+		$wp_customize->add_control('post_border_radius_setting', array(
+			'label' => __('Border radius'),
+			'section' => 'posts_section',
+			'type' => 'range',
+			'input_attrs' => array(
+				'min' => 0,
+				'max' => 10,
+				'step' => 1
+		)));
+
 		$wp_customize->add_control(new WP_Customize_Color_Control(
 			$wp_customize,
 			'post_background_color_control',
@@ -860,6 +874,19 @@
 			<style type="text/css">
 
 				/* --- Panel --- */
+				.panel-content.panel-main {
+					border-radius: <?php echo get_theme_mod('post_border_radius_setting', '4'); ?>px;
+				}
+
+				.panel-content.panel-main div:first-child{
+					border-top-left-radius: <?php echo get_theme_mod('post_border_radius_setting', '4'); ?>px;
+					border-top-right-radius: <?php echo get_theme_mod('post_border_radius_setting', '4'); ?>px;
+				}
+
+				.panel-content.panel-main div:last-child{
+					border-bottom-left-radius: <?php echo get_theme_mod('post_border_radius_setting', '4'); ?>px;
+					border-bottom-right-radius: <?php echo get_theme_mod('post_border_radius_setting', '4'); ?>px;
+				}
 
 				.panel-main.panel-content .panel-heading,
 				.panel-main.panel-content .panel-body, 
@@ -1067,16 +1094,16 @@
 				}
 
 				a:hover .stretch {
-					-webkit-box-shadow: 0px 0px 0px 4px <?php echo get_theme_mod('portfolio_border_hover_color_setting'); ?>;
-					-moz-box-shadow: 0px 0px 0px 4px <?php echo get_theme_mod('portfolio_border_hover_color_setting'); ?>;
-					box-shadow: 0px 0px 0px 4px <?php echo get_theme_mod('portfolio_border_hover_color_setting'); ?>;
+					-webkit-box-shadow: 0px 0px 0px 4px <?php echo get_theme_mod('portfolio_border_hover_color_setting', '#cccccc'); ?>;
+					-moz-box-shadow: 0px 0px 0px 4px <?php echo get_theme_mod('portfolio_border_hover_color_setting', '#cccccc'); ?>;
+					box-shadow: 0px 0px 0px 4px <?php echo get_theme_mod('portfolio_border_hover_color_setting', '#cccccc'); ?>;
 				}
 
 				/* Image block */
 				div.block-image-title {
 					background-color: <?php echo get_theme_mod('portfolio_pic_background_color_setting', '#000000'); ?>;
-					border-bottom-left-radius: <?php echo get_theme_mod('portfolio_border_radius_setting'); ?>px;
-					border-bottom-right-radius: <?php echo get_theme_mod('portfolio_border_radius_setting'); ?>px;
+					border-bottom-left-radius: <?php echo get_theme_mod('portfolio_border_radius_setting', '4'); ?>px;
+					border-bottom-right-radius: <?php echo get_theme_mod('portfolio_border_radius_setting', '4'); ?>px;
 				}
 
 				a:hover div.block-image-title {
