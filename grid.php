@@ -84,14 +84,14 @@
 	<script>
 		// Add dotdotdot to the divs
 		$(document).ready(function() {
-			$(".block-text").dotdotdot({
+			$(".block-text p").dotdotdot({
 				// Config
 			});
 		});
 
 		// Resize window listener
 		$(window).resize(function() {
-			$(".block-text").trigger("update");
+			$(".block-text p").trigger("update");
 		})
 	</script>
 	
