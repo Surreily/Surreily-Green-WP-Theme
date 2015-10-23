@@ -112,7 +112,7 @@
 						<input id="email" name="email" type="text" value="' . esc_attr($commenter[comment_author_email]) . '" size="30" ' . $aria_req . ' />
 						</p>',
 			'url' => '<p class="comment-form-url">
-						<label for="url">' . __('url') . '</label>' . ($req ? '<span>*</span>' : '') . '<br />
+						<label for="url">' . __('url') . '</label>' . '<br />
 						<input id="url" name="url" type="text" value="' . esc_attr($commenter[comment_author_email]) . '" size="30" ' . $aria_req . ' />
 						</p>'
 		);
