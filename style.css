@@ -332,12 +332,12 @@ div.depth-3.panel-comment {
   margin: 0;
 }
 
-.panel-comment table.comment-table td:last-child {
+.panel-comment table.comment-table td.comment-content {
   width: 100%;
 }
 
-.panel-comment td.comment-content {
-  padding-left: 1em;
+.panel-comment img.avatar {
+  margin-right: 1em;
 }
 
 .panel-comment .comment-name {

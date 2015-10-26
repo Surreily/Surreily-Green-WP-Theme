@@ -35,7 +35,7 @@
 
 										<td>
 											<div class="comment-author vcard">
-												<?php echo get_avatar($comment, $size='48'); ?>
+												<?php echo get_avatar($comment, $size='56'); ?>
 											</div>
 										</td>
 
