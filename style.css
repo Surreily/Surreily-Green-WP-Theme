@@ -16,6 +16,7 @@ Author URI: N/A
 
 body {
   font-family: Tahoma, Verdana, Arial, sans-serif;
+  line-height: 1.6em;
 }
 
 a:hover, 
@@ -95,6 +96,19 @@ p.text-muted {
   padding-right: 0;
   padding-top: 0.3em;
   padding-bottom: 0.3em;
+}
+
+
+
+/* --- Navigational buttons --- */
+ul.pager li a {
+  border: none;
+}
+
+ul.pager li.disabled a,
+ul.pager li.disabled a:hover,
+ul.pager li.disabled a:focus {
+  cursor: default;
 }
 
 

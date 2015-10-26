@@ -308,6 +308,43 @@
 
 
 
+		// Settings (navigational buttons)
+		$wp_customize->add_setting('navbutton_border_radius_setting', array(
+			'default' => '4'
+		));
+
+		$wp_customize->add_setting('navbutton_background_color_setting', array(
+			'default' => '#333333',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('navbutton_background_hover_color_setting', array(
+			'default' => '#666666',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('navbutton_text_color_setting', array(
+			'default' => '#ffffff',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('navbutton_text_hover_color_setting', array(
+			'default' => '#ffffff',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('navbutton_disabled_background_color_setting', array(
+			'default' => '#999999',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+		$wp_customize->add_setting('navbutton_disabled_text_color_setting', array(
+			'default' => '#ffffff',
+			'sanitize_callback' => 'sanitize_hex_color'
+		));
+
+
+
 		// Settings (other)
 		$wp_customize->add_setting('other_background_color_setting', array(
 			'default' => '#eeeeee',
@@ -813,6 +850,73 @@
 
 
 
+		// Controls (navigational buttons)
+		$wp_customize->add_control('navbutton_border_radius_setting', array(
+			'label' => __('Border radius'),
+			'section' => 'navbutton_section',
+			'type' => 'range',
+			'input_attrs' => array(
+				'min' => 0,
+				'max' => 10,
+				'step' => 1
+		)));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'navbutton_background_color_control',
+			array (
+				'label' => __('Background', 'surreilytheme'),
+				'section' => 'navbutton_section',
+				'settings' => 'navbutton_background_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'navbutton_background_hover_color_control',
+			array (
+				'label' => __('Background (hover)', 'surreilytheme'),
+				'section' => 'navbutton_section',
+				'settings' => 'navbutton_background_hover_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'navbutton_text_color_control',
+			array (
+				'label' => __('Link text', 'surreilytheme'),
+				'section' => 'navbutton_section',
+				'settings' => 'navbutton_text_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'navbutton_text_hover_color_control',
+			array (
+				'label' => __('Link text (hover)', 'surreilytheme'),
+				'section' => 'navbutton_section',
+				'settings' => 'navbutton_text_hover_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'navbutton_disabled_background_color_control',
+			array (
+				'label' => __('Disabled background', 'surreilytheme'),
+				'section' => 'navbutton_section',
+				'settings' => 'navbutton_disabled_background_color_setting')
+		));
+
+		$wp_customize->add_control(new WP_Customize_Color_Control(
+			$wp_customize,
+			'navbutton_disabled_text_color_control',
+			array (
+				'label' => __('Disabled link text', 'surreilytheme'),
+				'section' => 'navbutton_section',
+				'settings' => 'navbutton_disabled_text_color_setting')
+		));
+
+
+
 		// Controls (other)
 		$wp_customize->add_control(new WP_Customize_Color_Control(
 			$wp_customize,
@@ -840,22 +944,28 @@
 			'priority' => 1010
 		));
 
+		$wp_customize->add_section('navbutton_section', array(
+			'title' => __('Navigation button settings'),
+			'description' => __('Change the look of your navigational buttons (next and previous buttons at the bottom of some pages).'),
+			'priority' => 1020
+		));
+
 		$wp_customize->add_section('comments_section', array(
 			'title' => __('Comment settings'),
 			'description' => __('Change the look of your comments.'),
-			'priority' => 1020
+			'priority' => 1030
 		));
 
 		$wp_customize->add_section('portfolio_section', array(
 			'title' => __('Portfolio grid settings'),
 			'description' => __('Change the look of the portfolio grid page theme.'),
-			'priority' => 1030
+			'priority' => 1040
 		));
 
 		$wp_customize->add_section('footer_section', array(
 			'title' => __('Footer settings'),
 			'description' => __('Change the look of the footer.'),
-			'priority' => 1040
+			'priority' => 1050
 		));
 
 		$wp_customize->add_section('other_section', array(
@@ -921,6 +1031,30 @@
 
 				.panel-main.panel-content > .panel-footer > .text-muted {
 					color: <?php echo get_theme_mod('post_footer_color_setting', '#999999'); ?>;
+				}
+
+
+
+				/* --- Navigation buttons --- */
+
+				ul.pager li a {
+					background-color: <?php echo get_theme_mod('navbutton_background_color_setting', '#333333'); ?>;
+					color: <?php echo get_theme_mod('navbutton_text_color_setting', '#ffffff'); ?>;
+					border-radius: <?php echo get_theme_mod('navbutton_border_radius_setting', '4'); ?>px;
+				}
+
+				ul.pager li a:hover,
+				ul.pager li a:focus {
+					background-color: <?php echo get_theme_mod('navbutton_background_hover_color_setting', '#666666'); ?>;
+					color: <?php echo get_theme_mod('navbutton_text_hover_color_setting', '#ffffff'); ?>;
+				}
+
+
+				ul.pager li.disabled a,
+				ul.pager li.disabled a:hover,
+				ul.pager li.disabled a:focus {
+					background-color: <?php echo get_theme_mod('navbutton_disabled_background_color_setting', '#999999'); ?>;
+					color: <?php echo get_theme_mod('navbutton_disabled_text_color_setting', '#ffffff'); ?>;
 				}
 
 
