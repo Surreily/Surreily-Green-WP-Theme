@@ -332,7 +332,7 @@ div.depth-3.panel-comment {
   margin: 0;
 }
 
-.panel-comment table.comment-table td.comment-content {
+.panel-comment table.comment-table {
   width: 100%;
 }
 
